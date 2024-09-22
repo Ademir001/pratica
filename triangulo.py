@@ -18,7 +18,7 @@ if __name__ == '__main__':
         else:
             return False
     def isoceles(l1,l2,l3):
-        if (l1 != l2) and (l1 != l3) or (l2 != l1) and (l2 != l3) or (l3 != l1) and (l1 == l2) or (l2 ==l3) or (l3 == l1):
+        if not equilatero(l1,l2,l3) and (l1 == l2) or (l2 ==l3) or (l3 == l1):
             return True
         else:
             return False
