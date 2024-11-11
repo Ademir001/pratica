@@ -41,3 +41,21 @@ while valor > 0:
     valor -= parcelas_12
     meses_passados += 1
 print(f"total de meses {meses_passados}")
+print()
+
+def imc(Massa, Altura):
+    valor = Massa/ Altura**2
+    return valor
+altura = random.uniform(1.50, 2.00)
+massa = random.randint(30, 100)
+valor = imc(massa, altura)
+
+if imc in range(18.5, 25):
+    print("imc correto")
+elif imc < 18.5:
+    print("imc abaixo do necessario")
+else:
+    print("imc acima do necessario")
+
+
+print(f"ImC: {valor:.2f}")
