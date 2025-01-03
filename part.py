@@ -1,25 +1,18 @@
-class rodar:
-	def __init__(self,marca,modelo):
-		self.marca = marca
-		self.modelo = modelo
-	def move(self):
-		print("autobostes rodar")
-class carro(rodar):
-	pass
+import random as rs
+import os
 
-class planador(rodar):
-	def move(self):
-		print("vamos voar")
-class barco(rodar):
-	def move(self):
-		print("navegar vamo navegar")
-        
-car1 = carro("Ford", "Mustang") #Create a Car object
-boat1 = barco("Ibiza", "Touring 20") #Create a Boat object
-plane1 = planador("Boeing", "747") #Create a Plane object
+erros= 0 
+sorteio = rs.randrange(0,100)
+jogador = int(input("DIgite um numero "))
 
-for x in (car1, boat1, plane1):
-	print(x.marca)
-	print(x.modelo)
-	x.move()
-    
+
+while(sorteio != jogador):
+    os.system("cls")
+    if (sorteio > jogador):
+        print("Numero de valor maior")
+    elif (sorteio < jogador):
+        print("Numero de valor menor")
+    erros += 1
+    print(f"numero de erros ate agora {erros}")
+    jogador= int(input("Escolha outro numero"))
+print(f"Numero de erros é {erros} o numero sorteado foi {sorteio} igual a numero do jogador {jogador}") 
