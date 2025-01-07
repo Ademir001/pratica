@@ -1,18 +1,28 @@
-import random as rs
-import os
+import os 
+import random as rn
+from colorama import Fore, Style, Back
 
-erros= 0 
-sorteio = rs.randrange(0,100)
-jogador = int(input("DIgite um numero "))
-
-
-while(sorteio != jogador):
+players = 2
+vitoria = False
+turno_Max = 9
+turno = 0
+velha = [
+    ["","",""],
+    ["","",""],
+    ["","",""],
+]
+def tela():
+    global velha
+    global turno
     os.system("cls")
-    if (sorteio > jogador):
-        print("Numero de valor maior")
-    elif (sorteio < jogador):
-        print("Numero de valor menor")
-    erros += 1
-    print(f"numero de erros ate agora {erros}")
-    jogador= int(input("Escolha outro numero"))
-print(f"Numero de erros é {erros} o numero sorteado foi {sorteio} igual a numero do jogador {jogador}") 
+    print("0    1   2")
+    print(f"0:  {velha[0][0]} | {velha[0][1]} | {velha[0][2]}")
+    print("------------------------------")
+    print(f"1:  {velha[1][0]} | {velha[1][1]} | {velha[1][2]}")
+    print("------------------------------")
+    print(f"2:  {velha[2][0]} | {velha[2][1]} | {velha[2][2]}")
+    print("------------------------------")
+    print("jogadas: " + Fore.GREEN+str(turno)+ Fore.RESET )
+
+while True:
+    tela()
