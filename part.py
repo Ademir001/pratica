@@ -43,14 +43,13 @@ def jogador_player():
             turno += 1
         except:
             print("Linha e coluna invalida ")
+            os.system("pause")
 
 def jogador_pc():
     global turno
     global turno_max
-    global vit
     global jogador
     if jogador == 1 and turno < turno_max:
-        try:
             l = ran.randrange(0,3)
             c = ran.randrange(0,3)
             while velha[l][c] != "":
@@ -59,9 +58,28 @@ def jogador_pc():
                 velha[l][c] = "O"
                 turno += 1
                 jogador= 2
-        except:
-            print("Invalido")
-            os.system("pause")
+
+def vitoria_verificar():
+    global velha
+    vitoria = False
+    simbo = ["X","O"]
+    for s in simbo:
+        vitoria = False
+        il=ic=0
+        while ic <3:
+            soma=0
+            il=0
+            while ic<3:
+                if(velha[il][ic]==s):
+                    soma += 1
+                ic+=1 
+            if(soma==3):
+                vitoria = True
+                break
+            il+=1
+        if(vitoria != "n"):
+            break
+
           
 for i in range(turno_max):
     jogo()
