@@ -22,26 +22,28 @@ r = 5
 n = (4/3)*pi*r**3
 print(f"é {n:.2f}")
 
-def começar():
-    parede = """
-        +- - - -+ - - - -+ - - - -+
-        /       /       /         /
-        /       /       /         /
-        /       /       /         /
-        /       /       /         /
+def draw_grid():
     """
-    print(parede)
-def final():
-    perede = """
-        + - - - -+ - - - -+ - - - -+    
-        /        /        /        /
-        /        /        /        /
-        /        /        /        /
-        /        /        /        /
-        + - - - -+ - - - -+ - - - -+
+    Função que desenha uma grade simples com 2 linhas e 2 colunas,
+    conforme o exemplo fornecido.
     """
-    print(perede)
-def completar():
-    começar();começar();final()
-    
-completar()
+    # Função para desenhar uma linha horizontal (+ - - - - + - - - - +)
+    def draw_horizontal():
+        print('+', '- ' * 4, end='')
+        print('+', '- ' * 4, end='')
+        print('+')
+
+    # Função para desenhar as linhas verticais (|         |         |)
+    def draw_vertical():
+        for _ in range(4):
+            print('|', ' ' * 7, '|', ' ' * 7, '|')
+
+    # Desenho da grade
+    draw_horizontal()  # Linha superior
+    draw_vertical()    # Primeira célula
+    draw_horizontal()  # Linha do meio
+    draw_vertical()    # Segunda célula
+    draw_horizontal()  # Linha inferior
+
+# Chamada da função para desenhar a grade
+draw_grid()

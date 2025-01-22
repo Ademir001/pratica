@@ -18,3 +18,5 @@ if (res != None):
     print(tam)
 else:
     print(res)
+rese = re.split(r"\s",t)
+print(rese)
