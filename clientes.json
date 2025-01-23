@@ -1,0 +1,9 @@
+{
+    "cliente_id": 12345,
+    "data_acesso": "2025-01-22",
+    "acoes": [
+        {"tipo": "busca", "termo": "fones bluetooth"},
+        {"tipo": "clique", "produto_id": 9876},
+        {"tipo": "compra", "produto_id": 9876, "valor": 199.99}
+    ]
+}
