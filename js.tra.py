@@ -1,18 +1,15 @@
-import pandas as pd 
-import json
+import pyautogui
+import time
 
-with open("clientes.json", "r") as arq:
-    dados = json.load(arq)
-clientes = []
-for cliente in dados:
-    for acao in cliente["acoes"]:
-        clientes.append({
-            "cliente_id": cliente["cliente_id"],
-            "data_acesso": cliente["data_acesso"],
-            "tipo": acao["tipo"],
-            "detalhes": acao.get("termo") or acao.get("produto_id") or acao.get("valor")
-        })
-
-# Converter para DataFrame para análise
-df = pd.DataFrame(clientes)
-print(df.head())
+pyautogui.hotkey("win", "r")
+time.sleep(1)
+pyautogui.write("notepad")
+pyautogui.press("enter")
+time.sleep(1)
+pyautogui.write("Automação com pyautogui", interval=0.1)
+pyautogui.hotkey("Ctrl" ,"s")
+time.sleep(2)
+pyautogui.write("teste.txt")
+pyautogui.press("enter")
+time.sleep(1)
+print("Arquivo salvo")
